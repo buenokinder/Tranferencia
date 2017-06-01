@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Docway.Domain.Models
 {
-    public class Colaborator
+    public class Document
     {
-
+        public int Id { get; set; }
+        public string ImageUrl { get; set; }
     }
 }

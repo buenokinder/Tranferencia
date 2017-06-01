@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace Docway.Domain.Models
 {
-    public class CityAutoComplete
+    public class Speciality
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public StateAutoComplete State { get; set; }
+        public List<Doctor> Doctors { get; set; }
+        public List<Appointment> Appointments { get; set; }
+        public string Comments { get; set; }
     }
 }

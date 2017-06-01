@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Docway.Domain.Models
 {
-    class City
+    public class City
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }

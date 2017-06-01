@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Docway.Domain.Models
 {
-    class Clinic
+    public class Clinic 
     {
+        //public List<VaccineStock> Vaccines { get; set; }
+        //public List<ExamStock> Exams { get; set; }
     }
 }

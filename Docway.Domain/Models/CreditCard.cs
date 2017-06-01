@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace Docway.Domain.Models
 {
-    class CreditCard
+    public class CreditCard
     {
+        public int Id { get; set; }
+        public string CardHolder { get; set; }
+        public string Brand { get; set; }
+        public string Token { get; set; }
+        public string FinalNumber { get; set; }
+        public bool IsPrimary { get; set; }
+        public Patient Owner { get; set; }
+        public PaymentProvider Provider { get; set; }
+        public string PaymentMethodId { get; set; }
     }
 }
