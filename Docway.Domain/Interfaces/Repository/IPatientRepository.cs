@@ -10,5 +10,6 @@ namespace Docway.Domain.Interfaces.Repository
     public interface IPatientRepository : IRepository<Patient>
     {
         Patient GetByEmail(string email);
+        Patient GetByIdWithUser(string email);
     }
 }

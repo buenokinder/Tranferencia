@@ -31,6 +31,9 @@ namespace Docway.Domain.Validations.Customs
         {
             var cpf = context.PropertyValue as string;
 
+            if (cpf == null) return false;
+
+
             string valor = cpf.Replace(".", "").Replace("-", "");
 
             if (valor.Length != 11)  return false;

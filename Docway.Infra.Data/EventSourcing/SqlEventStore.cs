@@ -8,12 +8,12 @@ namespace Docway.Infra.Data.EventSourcing
     public class SqlEventStore : IEventStore
     {
         private readonly IEventStoreRepository _eventStoreRepository;
-        private readonly IUser _user;
+       // private readonly IUser _user;
 
-        public SqlEventStore(IEventStoreRepository eventStoreRepository, IUser user)
+        public SqlEventStore(IEventStoreRepository eventStoreRepository)
         {
             _eventStoreRepository = eventStoreRepository;
-            _user = user;
+          //  _user = user;
         }
 
         public void Save<T>(T theEvent) where T : Event
@@ -23,7 +23,7 @@ namespace Docway.Infra.Data.EventSourcing
             var storedEvent = new StoredEvent(
                 theEvent,
                 serializedData,
-                _user.Name);
+                "Carlos");
 
             _eventStoreRepository.Store(storedEvent);
         }

@@ -15,7 +15,7 @@ namespace Docway.Domain.Models
         public string FinalNumber { get; set; }
         public bool IsPrimary { get; set; }
         public Patient Owner { get; set; }
-        public PaymentProvider Provider { get; set; }
+        //public PaymentProvider Provider { get; set; }
         public string PaymentMethodId { get; set; }
     }
 }

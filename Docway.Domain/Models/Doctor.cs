@@ -30,7 +30,7 @@ namespace Docway.Domain.Models
         public List<Speciality> Specialties { get; set; }
         public List<Calendar> Calendar { get; set; }
 
-        public List<PreAppointment> PreAppointments { get; set; }
+        //public List<PreAppointment> PreAppointments { get; set; }
 
         public Doctor()
         {

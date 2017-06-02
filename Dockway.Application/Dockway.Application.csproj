@@ -30,7 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.0.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.0.2\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,7 +47,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EventSourcedNormalizers\Patient\PatientHistory.cs" />
+    <Compile Include="EventSourcedNormalizers\Patient\PatientHistoryData.cs" />
+    <Compile Include="Interfaces\IPatientAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\PatientAppService.cs" />
+    <Compile Include="ViewModels\PaitentViewModel.cs" />
+    <Compile Include="ViewModels\UserBaseViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Docway.Domain.Core\Docway.Domain.Core.csproj">
+      <Project>{9d76cec7-c7b2-490d-affb-ece52d18ffa3}</Project>
+      <Name>Docway.Domain.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Docway.Domain\Docway.Domain.csproj">
+      <Project>{8712ff0e-4210-4d59-9ebd-651dbeeb0ff4}</Project>
+      <Name>Docway.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Docway.Infra.Data\Docway.Infra.Data.csproj">
+      <Project>{20201b6d-12e0-4dc9-b598-080a2488ae36}</Project>
+      <Name>Docway.Infra.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -2,6 +2,7 @@
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace Docway.Domain.Models
@@ -9,18 +10,24 @@ namespace Docway.Domain.Models
     public class Patient : Entity
     {
 
-        public Patient(Guid id, string name, string email, string cpf, string telefone, string password)
+        public Patient(Guid id, string name, string email, string cpf, string telefone, string password, string userName)
         {
             Id = id;
-            this.user.Name = name;
-            this.user.Email = email;
-            this.user.PasswordHash = new PasswordHasher().HashPassword(password);
-            this.user.PhoneNumber = telefone;
+            this.Cpf = cpf;
+            this.User = new UserBase();
+            this.User.Name = name;
+            this.User.UserName = userName;
+            this.User.Email = email;
+            this.User.PasswordHash = new PasswordHasher().HashPassword(password);
+            this.User.PhoneNumber = telefone;
         }
 
         public string Cpf { get; set; }
 
-        public UserBase user { get; set; }
+
+        public Guid UserBaseId { get; set; }
+        
+        public UserBase User { get; set; }
 
         protected Patient() { }
 

@@ -13,6 +13,6 @@ namespace Docway.Domain.Models
 
         public List<Appointment> Appointments { get; set; }
 
-        public List<PreAppointment> PreAppointments { get; set; }
+        //public List<PreAppointment> PreAppointments { get; set; }
     }
 }

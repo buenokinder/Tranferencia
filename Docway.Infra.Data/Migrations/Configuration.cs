@@ -1,4 +1,4 @@
-namespace Docway.Infra.Data.Migrations
+﻿namespace Docway.Infra.Data.Migrations
 {
     using System;
     using System.Data.Entity;

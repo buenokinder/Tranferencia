@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Docway.Api\Docway.Api.csproj" />
+    <ProjectReference Include="..\Docway.Domain.Core\Docway.Domain.Core.csproj" />
+    <ProjectReference Include="..\Docway.Domain\Docway.Domain.csproj" />
+    <ProjectReference Include="..\Docway.Infra.Data\Docway.Infra.Data.csproj" />
+  </ItemGroup>
+
+</Project>

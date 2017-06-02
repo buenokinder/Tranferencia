@@ -19,18 +19,22 @@ namespace Docway.Domain.Models
 		public string Name { get; set; }
 		
 		public override string Email { get; set; }
-		public string DeviceToken { get; set; }
+        public override string PhoneNumber { get => base.PhoneNumber; set => base.PhoneNumber = value; }
+        public override string UserName { get => base.UserName; set => base.UserName = value; }
+        public string DeviceToken { get; set; }
 		public string MerchantReference { get; set; }
 		public string TimeZone { get; set; }
 		public Address Address { get; set; }
 		public bool IsDeleted { get; set; }
 		public bool IsSUSEnabled { get; set; }
 		public DateTime? CreateDate { get; set; }
-		
-		//public List<Appointment> Appointments { get; set; }
-		//public List<Promotion> Promotions { get; set; }
 
-		public string MailChimpId { get; set; }
+        public ICollection<Patient> Patients { get; set; }
+
+        //public List<Appointment> Appointments { get; set; }
+        //public List<Promotion> Promotions { get; set; }
+
+        public string MailChimpId { get; set; }
 
 		
 		public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<UserBase> manager)

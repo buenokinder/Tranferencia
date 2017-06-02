@@ -17,7 +17,7 @@ namespace Docway.Domain.Commands.Patient
         public string Email { get; set; }
         public string Cpf { get; set; }
         public string Telefone { get; set; }
-
+        public string UserName { get; set; }
         public string Password { get; set; }
 
         public DateTime? DateOfBirth { get; set; }      

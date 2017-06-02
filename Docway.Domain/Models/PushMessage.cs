@@ -16,7 +16,7 @@ namespace Docway.Domain.Models
         public string PhoneNumber { get; set; }
         public string[] PhoneNumbers { get; set; }
         public dynamic Data { get; set; }
-        public UserType UserType { get; set; }
+        //public UserType UserType { get; set; }
         public bool NovaConsulta { get; set; }
     }
 }

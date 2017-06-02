@@ -13,11 +13,13 @@ namespace Docway.Domain.Commands.Patient
 
         
 
-        public RegisterNewPatientCommand(string name, string email, string cpf, string telefone, string password)
+        public RegisterNewPatientCommand(string name, string email, string cpf, string telefone, string password, string userName)
         {
+            Id = Guid.NewGuid();
             Name = name;
             Email = email;
             Cpf = cpf;
+            UserName = userName;
             Telefone = telefone;
             Password = password;
         }

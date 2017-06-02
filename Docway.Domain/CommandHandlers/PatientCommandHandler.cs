@@ -36,9 +36,9 @@ namespace Docway.Domain.CommandHandlers
         {
             this.Validation(message);
 
-            var patient = new Patient(Guid.NewGuid(), message.Name, message.Email, message.Cpf, message.Telefone, message.Password);
+            var patient = new Patient(Guid.NewGuid(), message.Name, message.Email, message.Cpf, message.Telefone, message.Password, message.UserName);
 
-            if (_patientRepository.GetByEmail(patient.user.Email) != null)
+            if (_patientRepository.GetByEmail(patient.User.Email) != null)
             {
                 Bus.RaiseEvent(new DomainNotification(message.MessageType, "Não é possível realizar o cadastro com o mesmo email de médico."));
                 return;
@@ -46,15 +46,15 @@ namespace Docway.Domain.CommandHandlers
 
             _patientRepository.Add(patient);
 
-            if (Commit()) Bus.RaiseEvent(new PatientRegisteredEvent(patient.Id, patient.user.Name, patient.user.Email, patient.Cpf, patient.user.PhoneNumber));
+            if (Commit()) Bus.RaiseEvent(new PatientRegisteredEvent(patient.Id, patient.User.Name, patient.User.Email, patient.Cpf, patient.User.PhoneNumber));
         }
 
         public void Handle(UpdatePatientCommand message)
         {
             this.Validation(message);
 
-            var patient = new Patient(message.Id, message.Name, message.Email, message.Cpf, message.Telefone, message.Password);
-            var existingPatient = _patientRepository.GetByEmail(patient.user.Email);
+            var patient = new Patient(message.Id, message.Name, message.Email, message.Cpf, message.Telefone, message.Password, message.UserName);
+            var existingPatient = _patientRepository.GetByEmail(patient.User.Email);
 
             if (existingPatient != null)
             {
@@ -67,7 +67,7 @@ namespace Docway.Domain.CommandHandlers
 
             _patientRepository.Update(patient);
 
-            if (Commit()) Bus.RaiseEvent(new PatientUpdatedEvent(patient.Id, patient.user.Name, patient.user.Email, patient.Cpf, patient.user.PhoneNumber));
+            if (Commit()) Bus.RaiseEvent(new PatientUpdatedEvent(patient.Id, patient.User.Name, patient.User.Email, patient.Cpf, patient.User.PhoneNumber));
 
         }
 

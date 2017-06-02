@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Docway.Domain.Models
 {
-    class Appointment
+    public class Appointment
     {
     }
 }

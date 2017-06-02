@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26510.0
+VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Docway.Api", "Docway.Api\Docway.Api.csproj", "{1CF435AD-0950-4B2A-B9DE-D5DCF7254EB9}"
 EndProject
@@ -24,6 +24,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{BBB774F5-AF33-4A6D-9233-3FEFC89D71BE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dockway.Application", "Dockway.Application\Dockway.Application.csproj", "{C2EDE6B9-7414-459A-9B60-CE3B09F52F61}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2 - CrossCutting", "4.2 - CrossCutting", "{DA583D94-FB70-4A41-ACD5-02B5287A3371}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docway.Infra.CrossCutting.Identity", "Docway.Infra.CrossCutting.Identity\Docway.Infra.CrossCutting.Identity.csproj", "{F4B96FEA-FEE3-4054-8FFB-A01A67D45A54}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +55,10 @@ Global
 		{C2EDE6B9-7414-459A-9B60-CE3B09F52F61}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2EDE6B9-7414-459A-9B60-CE3B09F52F61}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2EDE6B9-7414-459A-9B60-CE3B09F52F61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4B96FEA-FEE3-4054-8FFB-A01A67D45A54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4B96FEA-FEE3-4054-8FFB-A01A67D45A54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4B96FEA-FEE3-4054-8FFB-A01A67D45A54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4B96FEA-FEE3-4054-8FFB-A01A67D45A54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,5 +74,7 @@ Global
 		{4855CE9E-01EF-4DE2-A6BE-87D99DF7BE28} = {329C44D8-4157-48D6-A309-FD228E32AE2E}
 		{BBB774F5-AF33-4A6D-9233-3FEFC89D71BE} = {329C44D8-4157-48D6-A309-FD228E32AE2E}
 		{C2EDE6B9-7414-459A-9B60-CE3B09F52F61} = {BBB774F5-AF33-4A6D-9233-3FEFC89D71BE}
+		{DA583D94-FB70-4A41-ACD5-02B5287A3371} = {D4E20C7A-924E-48D3-9BAE-CFD3BCB8E5B3}
+		{F4B96FEA-FEE3-4054-8FFB-A01A67D45A54} = {DA583D94-FB70-4A41-ACD5-02B5287A3371}
 	EndGlobalSection
 EndGlobal

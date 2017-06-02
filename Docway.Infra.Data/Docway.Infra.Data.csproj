@@ -68,20 +68,23 @@
     <Compile Include="Mappings\PatientMap.cs" />
     <Compile Include="Mappings\StoredEventMap.cs" />
     <Compile Include="Mappings\UserMap.cs" />
-    <Compile Include="Migrations\201705311754261_Initial.cs" />
-    <Compile Include="Migrations\201705311754261_Initial.Designer.cs">
-      <DependentUpon>201705311754261_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201706021451203_Initial.cs" />
+    <Compile Include="Migrations\201706021451203_Initial.Designer.cs">
+      <DependentUpon>201706021451203_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\EventSourcing\EventStoreSQLRepository.cs" />
     <Compile Include="Repository\EventSourcing\IEventStoreRepository.cs" />
+    <Compile Include="Repository\PatientRepository.cs" />
     <Compile Include="Repository\Repository.cs" />
     <Compile Include="UoW\UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Docway.Domain.Core\Docway.Domain.Core.csproj">
@@ -94,8 +97,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705311754261_Initial.resx">
-      <DependentUpon>201705311754261_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706021451203_Initial.resx">
+      <DependentUpon>201706021451203_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
