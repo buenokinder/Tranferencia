@@ -7,8 +7,9 @@ using System.Text;
 
 namespace Docway.Domain.Models
 {
-    public class Patient : Entity
+    public class Patient : EntityGuid
     {
+        protected Patient() { }
 
         public Patient(Guid id, string name, string email, string cpf, string telefone, string password, string userName)
         {
@@ -29,7 +30,7 @@ namespace Docway.Domain.Models
         
         public UserBase User { get; set; }
 
-        protected Patient() { }
+       
 
         #region Dados Fisiologicos
         public decimal Weight { get; set; }
@@ -41,15 +42,17 @@ namespace Docway.Domain.Models
         public string HealthProblems { get; set; }
         public string AllergiesAndReactions { get; set; }
         public string Medicines { get; set; }
+        [Index]
         public string BloodType { get; set; }
-        // public List<VaccineSchedule> Vaccines { get; set; }
+        public List<ProductScheduler> ProductSchedulers { get; set; }
         #endregion
 
 
         #region Dados de Pagamento
-        //public List<CreditCard> CreditCards { get; set; }
+        public List<CreditCard> CreditCards { get; set; }
         public List<Address> Addresses { get; set; }
-        public string IuguClientId { get; set; }
+        public int ClientGatewayPaymentId { get; set; }
+        public ClientGatewayPayment GatewayPayment { get; set; }
         #endregion
 
         #region Multi-Usuario

@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Docway.Domain.Models
 {
-    public class StateAutoComplete : Entity
+    public class Insurance : Entity
     {
-        
-        public string Code { get; set; }
         public string Name { get; set; }
-        public List<City> Cities { get; set; }
+        public string ClientId { get; set; }
+        public string TokenId { get; set; }
+        
     }
 }

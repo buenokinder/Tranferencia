@@ -1,48 +1,39 @@
-﻿using System;
+﻿using Docway.Domain.Core.Models;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Docway.Domain.Models
 {
-    //public class Appointment
-    //{
-    //    public int Id { get; set; }
+    public class Agenda : Entity
+    {
+        protected Agenda() { }
 
-    //    public string PromotionalCode { get; set; }
-    //    public decimal Price { get; set; }
+        public Agenda(Doctor owner)
+        {
+            this.Owner = owner;
+            
+        }
 
-    //    public bool HasHealthInsurance { get; set; }
-    //    public bool IsUrgency { get; set; }
+        public Agenda SetObservacao(string observacao)
+        {
+            this.Observacao = Observacao;
+            return this;
+        }
 
-    //    public DateTime DateAppointment { get; set; }
-    //    public DateTime CreateDate { get; set; }
-
-    //    //public PaymentMethod PaymentMethod { get; set; }
-    //    //public PaymentStatus PaymentStatus { get; set; }
-    //    public CreditCard CreditCard { get; set; }
-
-    //    //public AppointmentType Type { get; set; }
-    //    //public AppointmentStatus Status { get; set; }
-
-    //    public Address Address { get; set; }
-    //    public UserBase Seller { get; set; }
-    //    public UserBase Buyer { get; set; }
-    //    public MedicalRecord MedicalRecord { get; set; }
-    //    public Speciality Specialty { get; set; }
-
-    //    public List<Symptom> Symptoms { get; set; }
-    //    //public List<Exam> Exams { get; set; }
-    //    //public List<Vaccine> Vaccines { get; set; }
-    //    public List<Transaction> Transactions { get; set; }
-
-    //    public Appointment()
-    //    {
-    //        Symptoms = new List<Symptom>();
-    //        //Exams = new List<Exam>();
-    //        //Vaccines = new List<Vaccine>();
-    //        Transactions = new List<Transaction>();
-    //    }
-    //}
+        public Agenda SetIsDIsponible(bool isDisponible)
+        {
+            this.IsDisponible = isDisponible;
+            return this;
+        }
+        [Index]
+        public Doctor Owner { get;  set; }
+        [Index]
+        public bool IsDisponible { get;  set; }
+        public DateTime LastUpdate { get;  set; }
+        public string Observacao { get;  set; }
+    }
 }

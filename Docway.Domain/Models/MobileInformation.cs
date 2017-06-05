@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Docway.Domain.Core.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Docway.Domain.Models
 {
-    public class MobileInformation
+    public class MobileInformation : Entity
     {
-        public int Id { get; set; }
+        
 
         public string OperatingSystem { get; set; }
 

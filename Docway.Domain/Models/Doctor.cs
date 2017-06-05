@@ -1,12 +1,14 @@
-﻿using System;
+﻿using Docway.Domain.Core.Models;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Docway.Domain.Models
 {
-    public class Doctor 
+    public class Doctor : EntityGuid
     {
         // informações profissionais
         public string Crm { get; set; }
@@ -27,10 +29,15 @@ namespace Docway.Domain.Models
 
         public List<Evaluation> Evaluations { get; set; }
         public List<Document> Degrees { get; set; }
+
+        [Index]
         public List<Speciality> Specialties { get; set; }
+        [Index]
         public List<Calendar> Calendar { get; set; }
 
-        //public List<PreAppointment> PreAppointments { get; set; }
+        public Guid ServiceProviderId { get; set; }
+
+        public ServiceProvider ServiceProvider { get; set; }
 
         public Doctor()
         {

@@ -29,7 +29,7 @@ namespace Docway.Domain.Models
 		public bool IsSUSEnabled { get; set; }
 		public DateTime? CreateDate { get; set; }
 
-        public ICollection<Patient> Patients { get; set; }
+        //public ICollection<Patient> Patients { get; set; }
 
         //public List<Appointment> Appointments { get; set; }
         //public List<Promotion> Promotions { get; set; }

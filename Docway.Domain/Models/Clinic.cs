@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Docway.Domain.Core.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +7,14 @@ using System.Threading.Tasks;
 
 namespace Docway.Domain.Models
 {
-    public class Clinic 
+    public class Clinic : EntityGuid
     {
-        //public List<VaccineStock> Vaccines { get; set; }
-        //public List<ExamStock> Exams { get; set; }
+        
+        public Guid ServiceProviderId { get; set; }
+
+        public ServiceProvider ServiceProvider { get; set; }
+
+        public List<Stock> Stocks { get; set; }
+        
     }
 }

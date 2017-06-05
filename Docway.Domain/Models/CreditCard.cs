@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Docway.Domain.Enum;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,7 @@ namespace Docway.Domain.Models
         public string FinalNumber { get; set; }
         public bool IsPrimary { get; set; }
         public Patient Owner { get; set; }
-        //public PaymentProvider Provider { get; set; }
+        public PaymentProvider Provider { get; set; }
         public string PaymentMethodId { get; set; }
     }
 }

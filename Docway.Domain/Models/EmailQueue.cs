@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Docway.Domain.Core.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -7,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Docway.Domain.Models
 {
-    public class EmailQueue
+    public class EmailQueue : Entity
     {
-        public int Id { get; set; }
+        
         [Required]
         public string TemplateName { get; set; }
         public bool WasSent { get; set; }

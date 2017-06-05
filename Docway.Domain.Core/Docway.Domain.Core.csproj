@@ -65,6 +65,7 @@
     <Compile Include="Events\Message.cs" />
     <Compile Include="Events\StoredEvent.cs" />
     <Compile Include="Models\Entity.cs" />
+    <Compile Include="Models\EntityGuid.cs" />
     <Compile Include="Models\ValueObject.cs" />
     <Compile Include="Notifications\DomainNotification.cs" />
     <Compile Include="Notifications\DomainNotificationHandler.cs" />

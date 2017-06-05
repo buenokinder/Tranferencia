@@ -1,4 +1,5 @@
 ﻿using Docway.Domain.Core.Models;
+using Docway.Domain.Enum;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,11 +8,9 @@ using System.Threading.Tasks;
 
 namespace Docway.Domain.Models
 {
-    public class StateAutoComplete : Entity
+    public class Product : Entity
     {
-        
-        public string Code { get; set; }
         public string Name { get; set; }
-        public List<City> Cities { get; set; }
+        public ProductType ProductType { get; set; }
     }
 }
