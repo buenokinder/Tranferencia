@@ -72,6 +72,7 @@
     <Compile Include="Enum\PaymentStatus.cs" />
     <Compile Include="Enum\ProductType.cs" />
     <Compile Include="Enum\PushStatus.cs" />
+    <Compile Include="Enum\SocialNetworks.cs" />
     <Compile Include="Enum\UserType.cs" />
     <Compile Include="Enum\ScheduleType.cs" />
     <Compile Include="Enum\WebhookAction.cs" />
@@ -109,6 +110,7 @@
     <Compile Include="Models\Promotion.cs" />
     <Compile Include="Models\PushMessage.cs" />
     <Compile Include="Models\ServiceProvider.cs" />
+    <Compile Include="Models\SocialLogin.cs" />
     <Compile Include="Models\Specialty.cs" />
     <Compile Include="Models\StateAutoComplete.cs" />
     <Compile Include="Models\Stock.cs" />
