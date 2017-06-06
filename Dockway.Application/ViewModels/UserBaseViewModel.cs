@@ -12,6 +12,7 @@ namespace Dockway.Application.ViewModels
         //public string Id { get; set; }
         [Display(Name = "Nome")]
         public string Name { get; set; }
+        [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
         [Display(Name = "Nick Name")]

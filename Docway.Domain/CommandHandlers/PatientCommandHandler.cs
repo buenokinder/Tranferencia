@@ -18,7 +18,8 @@ namespace Docway.Domain.CommandHandlers
     public class PatientCommandHandler : CommandHandler,
         IHandler<RegisterNewPatientCommand>,
         IHandler<UpdatePatientCommand>,
-        IHandler<RemovePatientCommand>
+        IHandler<RemovePatientCommand>,
+        IHandler<AddDependentCommand>
     {
         private readonly IPatientRepository _patientRepository;
         private readonly IBus Bus;
@@ -86,6 +87,35 @@ namespace Docway.Domain.CommandHandlers
         public void Dispose()
         {
             _patientRepository.Dispose();
+        }
+
+        public void Handle(AddDependentCommand message)
+        {
+
+            this.Validation(message);
+
+
+
+            var parentPacient = _patientRepository.GetById(message.ParentId);
+
+
+            var patient = new Patient(Guid.NewGuid(), message.Name, message.Email, message.Cpf, message.Telefone, message.Password, message.UserName);
+            
+
+            if (_patientRepository.GetByEmail(patient.User.Email) != null)
+            {
+                Bus.RaiseEvent(new DomainNotification(message.MessageType, "Não é possível realizar o cadastro com o mesmo email de médico."));
+                return;
+            }
+            
+            patient.Parent = parentPacient;
+
+            _patientRepository.Add(patient);
+
+            if (Commit()) Bus.RaiseEvent(new PatientRegisteredEvent(patient.Id, patient.User.Name, patient.User.Email, patient.Cpf, patient.User.PhoneNumber));
+
+         
+            
         }
     }
 }

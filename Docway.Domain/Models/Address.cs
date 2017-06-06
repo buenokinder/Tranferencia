@@ -1,6 +1,7 @@
 ﻿using Docway.Domain.Core.Models;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.Spatial;
 
 namespace Docway.Domain.Models
 {
@@ -51,6 +52,9 @@ namespace Docway.Domain.Models
 		public string Landmark { get;  set; }
 		public double Latitude { get;  set; }
 		public double Longitude { get;  set; }
+
+        public DbGeography Location { get; set; }
+
         [Index]
         public bool IsPrimary { get;  set; }
 

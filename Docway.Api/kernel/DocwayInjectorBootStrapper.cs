@@ -59,6 +59,7 @@ namespace Docway.Api
 
             // Domain - Commands
             services.AddScoped<IHandler<RegisterNewPatientCommand>, PatientCommandHandler>();
+            services.AddScoped<IHandler<AddDependentCommand>, PatientCommandHandler>();
             services.AddScoped<IHandler<UpdatePatientCommand>, PatientCommandHandler>();
             services.AddScoped<IHandler<RemovePatientCommand>, PatientCommandHandler>();
 

@@ -20,5 +20,11 @@ namespace Docway.Api.Controllers
         {
             return (!_notifications.HasNotifications());
         }
+
+        public BadRequestObjectResult BadRequestValidations()
+        {
+            ModelState.AddModelError("Validate", _notifications.GetNotifications().FirstOrDefault().Value);
+            return BadRequest(ModelState);
+        }
     }
 }

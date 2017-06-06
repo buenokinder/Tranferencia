@@ -1,5 +1,4 @@
-﻿using Dockway.Application.EventSourcedNormalizers.Patient;
-using Dockway.Application.ViewModels;
+﻿using Dockway.Application.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Dockway.Application.Interfaces
 {
-   
-    public interface IPatientAppService : IDisposable
+    
+    public interface IDoctorAppService : IDisposable
     {
-        void Register(PatientViewModel patientViewModel);
-        void AddDependent(PatientViewModel patientViewModel);
+        void Register(DoctorViewModel patientViewModel);
+        IEnumerable<PatientViewModel> id AddDependent(PatientViewModel patientViewModel);
         IEnumerable<PatientViewModel> GetAll();
         PatientViewModel GetById(Guid id);
         void Update(PatientViewModel customerViewModel);

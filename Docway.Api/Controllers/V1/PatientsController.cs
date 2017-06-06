@@ -7,12 +7,11 @@ using Dockway.Application.Interfaces;
 using Docway.Domain.Core.Notifications;
 using Dockway.Application.ViewModels;
 using Microsoft.AspNetCore.Authorization;
-
-
+using Docway.Domain.Models;
 
 namespace Docway.Api.Controllers
 {
-    [Route("api/patients")]
+    [Route("api/patients/")]
     public class PatientsController : BaseController
     {
         private readonly IPatientAppService _patientAppService;
@@ -25,15 +24,16 @@ namespace Docway.Api.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public IActionResult Create([FromBody]PatientViewModel customerViewModel)
+        public IActionResult Create([FromBody]PatientViewModel patientViewModel)
         {
-            if (!ModelState.IsValid) return Ok(customerViewModel);
+            if (!ModelState.IsValid) return BadRequest(ModelState);
 
-            _patientAppService.Register(customerViewModel);
+            _patientAppService.Register(patientViewModel);
 
-           // if (IsValidOperation())
-            
-            return Created("/api/patients", customerViewModel);
+            if (IsValidOperation())
+                return Created("/api/patients", patientViewModel);
+
+            return BadRequestValidations();
         }
 
         [HttpGet]
@@ -41,15 +41,30 @@ namespace Docway.Api.Controllers
         [Route("{id:guid}")]
         public IActionResult Get(Guid? id)
         {
-            if (id == null)  return NotFound();
-         
+            if (id == null) return NotFound();
+
             var patientViewModel = _patientAppService.GetById(id.Value);
 
-            if (patientViewModel == null)   return NotFound();
-           
+            if (patientViewModel == null) return NotFound();
+
             return Ok(patientViewModel);
         }
+        [HttpPost]
+        [Route("{id:guid}/dependents")]
+        public IActionResult PostDependent(Guid id, [FromBody]PatientViewModel patientViewModel)
+        {
+            if (!ModelState.IsValid) return Ok(patientViewModel);
+
+            _patientAppService.AddDependent(patientViewModel.AddParent(id));
+
+            if (IsValidOperation())
+                return Created("/api/patients/" + id.ToString() + "/dependents", patientViewModel);
+
+            return BadRequestValidations();
+        }
     }
+
+   
 }
 
 //public HttpResponseMessage Get(string id)

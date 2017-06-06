@@ -13,7 +13,7 @@ namespace Docway.Infra.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201706021451203_Initial"; }
+            get { return "201706051930003_Initial"; }
         }
         
         string IMigrationMetadata.Source

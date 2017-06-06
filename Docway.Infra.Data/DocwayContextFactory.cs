@@ -13,7 +13,7 @@ namespace Docway.Infra.Data
     {
         public DocwayContext Create()
         {
-            return new DocwayContext("Server=(localdb)\\mssqllocaldb;Database=DocWay_v1;Trusted_Connection=True;MultipleActiveResultSets=true");
+            return new DocwayContext(@"Integrated Security=SSPI;Persist Security Info=False;User ID=SA;Initial Catalog=Docway;Data Source=localhost\SQLEXPRESS");
         }
     }
 }

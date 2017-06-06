@@ -3,6 +3,7 @@ using Docway.Domain.Models;
 using Docway.Infra.Data.Context;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,9 +25,10 @@ namespace Docway.Infra.Data.Repository
             return Find(c => c.User.Email == email).FirstOrDefault();
         }
 
-        public Patient GetByIdWithUser(string email)
+        public Patient GetByIdWithAggregate(Guid id)
         {
-            return null;
+           return   _context.Patients.Where(x => x.Id.Equals(id)).Include(x=>x.Parent).Include(x => x.User).Include(x=>x.Dependents).SingleOrDefault();
+            
         }
     }
 }

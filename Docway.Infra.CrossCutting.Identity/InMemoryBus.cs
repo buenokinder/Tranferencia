@@ -32,7 +32,7 @@ namespace Docway.Infra.CrossCutting.Identity
             //if (!theEvent.MessageType.Equals("DomainNotification"))
             //    _eventStore?.Save(theEvent);
 
-            //Publish(theEvent);
+            Publish(theEvent);
         }
 
         private static void Publish<T>(T message) where T : Message

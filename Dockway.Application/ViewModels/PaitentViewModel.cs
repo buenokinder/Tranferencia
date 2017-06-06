@@ -9,21 +9,27 @@ namespace Dockway.Application.ViewModels
 {
     public class PatientViewModel : UserBaseViewModel
     {
-        [Display(Name = "E-mail")]
-        public string EmailCorreto
-        {
-            get
-            {
-                if (this.Parent != null)
-                {
-                    return this.Parent.Email;
-                }
-                else
-                {
-                    return this.Email;
-                }
-            }
+        public PatientViewModel AddParent(Guid id) {
+            this.ParentId = id;
+            return this;
         }
+        public Guid? ParentId { get; set; }
+
+        //[Display(Name = "E-mail")]
+        //public string EmailCorreto
+        //{
+        //    get
+        //    {
+        //        if (this.Parent != null)
+        //        {
+        //            return this.Parent.Email;
+        //        }
+        //        else
+        //        {
+        //            return this.Email;
+        //        }
+        //    }
+        //}
 
         [Display(Name = "Data de Nascimento")]
         public DateTime? DateOfBirth { get; set; }
@@ -63,7 +69,7 @@ namespace Dockway.Application.ViewModels
         public bool IsSUSEnabled { get; set; }
 
         // multi-usuário
-        public PatientViewModel Parent { get; set; }
+        //public PatientViewModel Parent { get; set; }
         public List<PatientViewModel> Dependents { get; set; }
     }
 }

@@ -51,7 +51,7 @@ namespace Docway.Domain.Models
         #region Dados de Pagamento
         public List<CreditCard> CreditCards { get; set; }
         public List<Address> Addresses { get; set; }
-        public int ClientGatewayPaymentId { get; set; }
+        
         public ClientGatewayPayment GatewayPayment { get; set; }
         #endregion
 

@@ -14,8 +14,7 @@ namespace Dockway.Api.AutoMapper
         public DomainToViewModelMappingProfile()
         {
             CreateMap<Patient, PatientViewModel>().ForMember(dest=> dest.PhoneNumber, opt => opt.MapFrom(s=> s.User.PhoneNumber))
-                .ForMember(dest => dest.UserName, opt => opt.MapFrom(s => s.User.UserName))
-                .ForMember(dest => dest.Email, opt => opt.MapFrom(s => s.User.Email));
+                .ForMember(dest => dest.Email, opt => opt.MapFrom(s => s.User.Email)).IgnoreAllSourcePropertiesWithAnInaccessibleSetter();
 
         }
     }

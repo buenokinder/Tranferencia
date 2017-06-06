@@ -24,8 +24,7 @@ namespace Docway.Infra.Data.Context
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            var address = new Address();
-
+            
 
 
             modelBuilder.Conventions.Add(new StringProperties());

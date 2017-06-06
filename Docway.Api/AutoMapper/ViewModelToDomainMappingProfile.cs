@@ -17,6 +17,11 @@ namespace Dockway.Api.AutoMapper
                 .ConstructUsing(c => new RegisterNewPatientCommand(c.Name, c.Email, c.Cpf, c.PhoneNumber, c.Password, c.UserName)).IgnoreAllPropertiesWithAnInaccessibleSetter();
             CreateMap<PatientViewModel, UpdatePatientCommand>()
                 .ConstructUsing(c => new UpdatePatientCommand(c.Name, c.Email, c.Cpf, c.PhoneNumber, c.Password));
+
+            CreateMap<PatientViewModel, AddDependentCommand>()
+                .ConstructUsing(c => new AddDependentCommand(c.ParentId.Value, c.Name, c.Email, c.Cpf, c.PhoneNumber, c.Password, c.UserName));
+
+            
         }
     }
 }

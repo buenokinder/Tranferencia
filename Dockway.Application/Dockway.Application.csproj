@@ -49,10 +49,18 @@
   <ItemGroup>
     <Compile Include="EventSourcedNormalizers\Patient\PatientHistory.cs" />
     <Compile Include="EventSourcedNormalizers\Patient\PatientHistoryData.cs" />
+    <Compile Include="Interfaces\IDoctorAppService.cs" />
     <Compile Include="Interfaces\IPatientAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\PatientAppService.cs" />
+    <Compile Include="ViewModels\AddressViewModel.cs" />
+    <Compile Include="ViewModels\BankAccountViewModel.cs" />
+    <Compile Include="ViewModels\DoctorViewModel.cs" />
+    <Compile Include="ViewModels\DocumentViewModel.cs" />
+    <Compile Include="ViewModels\EvaluationViewModel.cs" />
+    <Compile Include="ViewModels\IuguCredentialViewModel.cs" />
     <Compile Include="ViewModels\PaitentViewModel.cs" />
+    <Compile Include="ViewModels\SpecialtyViewModel.cs" />
     <Compile Include="ViewModels\UserBaseViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

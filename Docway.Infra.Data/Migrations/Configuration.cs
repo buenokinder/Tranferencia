@@ -1,4 +1,4 @@
-﻿namespace Docway.Infra.Data.Migrations
+namespace Docway.Infra.Data.Migrations
 {
     using System;
     using System.Data.Entity;
@@ -9,7 +9,7 @@
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(Docway.Infra.Data.Context.DocwayContext context)

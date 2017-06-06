@@ -41,12 +41,13 @@ namespace Dockway.Application.Services
 
         public PatientViewModel GetById(Guid id)
         {
-            return _mapper.Map<PatientViewModel>(_patientRepository.GetById(id));
+            var tmp = _patientRepository.GetByIdWithAggregate(id);
+
+            return _mapper.Map<PatientViewModel>(tmp);
         }
 
         public void Register(PatientViewModel patientViewModel)
         {
-            
             var registerCommand = _mapper.Map<RegisterNewPatientCommand>(patientViewModel);
             Bus.SendCommand(registerCommand);
         }
@@ -71,6 +72,12 @@ namespace Dockway.Application.Services
         public void Dispose()
         {
             GC.SuppressFinalize(this);
+        }
+
+        public void AddDependent(PatientViewModel patientViewModel)
+        {
+            var addDependentCommand = _mapper.Map<AddDependentCommand>(patientViewModel);
+            Bus.SendCommand(addDependentCommand);
         }
     }
 }
