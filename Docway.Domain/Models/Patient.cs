@@ -11,26 +11,35 @@ namespace Docway.Domain.Models
     {
         protected Patient() { }
 
-        public Patient(Guid id, string name, string email, string cpf, string telefone, string password, string userName)
+        public Patient(Guid id, string cpf, UserBase user)
         {
             Id = id;
             this.Cpf = cpf;
-            this.User = new UserBase();
-            this.User.Name = name;
-            this.User.UserName = userName;
-            this.User.Email = email;
-            this.User.PasswordHash = new PasswordHasher().HashPassword(password);
-            this.User.PhoneNumber = telefone;
+            this.User = user;
+        }
+
+        public void Update(string cpf, string healthProblems,  decimal height, decimal weight, DateTime? dateOfBirth, string allergiesAndReactions,
+            string medicines, string bloodType)
+        {
+            this.Cpf = cpf;
+            this.HealthProblems = healthProblems;
+            this.Height = height;
+            this.Weight = weight;
+            this.DateOfBirth = dateOfBirth;
+            this.AllergiesAndReactions = allergiesAndReactions;
+            this.Medicines = medicines;
+            this.BloodType = bloodType;
+
         }
 
         public string Cpf { get; set; }
 
 
         public Guid UserBaseId { get; set; }
-        
+
         public UserBase User { get; set; }
 
-       
+
 
         #region Dados Fisiologicos
         public decimal Weight { get; set; }
@@ -51,7 +60,7 @@ namespace Docway.Domain.Models
         #region Dados de Pagamento
         public List<CreditCard> CreditCards { get; set; }
         public List<Address> Addresses { get; set; }
-        
+
         public ClientGatewayPayment GatewayPayment { get; set; }
         #endregion
 

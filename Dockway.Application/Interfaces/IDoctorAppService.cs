@@ -11,11 +11,11 @@ namespace Dockway.Application.Interfaces
     public interface IDoctorAppService : IDisposable
     {
         void Register(DoctorViewModel patientViewModel);
-        IEnumerable<PatientViewModel> id AddDependent(PatientViewModel patientViewModel);
-        IEnumerable<PatientViewModel> GetAll();
+        IEnumerable<DoctorViewModel> GetAll();
+        IEnumerable<DoctorViewModel> Find(double latitude, double longitude, DayOfWeek? DayOfWeek, int? Hour, DateTime? Date, int? specialtyId = null , bool isSUSEnabled = false);
         PatientViewModel GetById(Guid id);
-        void Update(PatientViewModel customerViewModel);
+        void Update(DoctorViewModel customerViewModel);
         void Remove(Guid id);
-        IList<PatientHistoryData> GetAllHistory(Guid id);
+        
     }
 }

@@ -37,7 +37,7 @@ namespace Docway.Domain.CommandHandlers
         {
             this.Validation(message);
 
-            var patient = new Patient(Guid.NewGuid(), message.Name, message.Email, message.Cpf, message.Telefone, message.Password, message.UserName);
+            var patient = new Patient(Guid.NewGuid(),  message.Cpf, new UserBase(message.Name, message.Email, message.UserName, message.Telefone, message.Password));
 
             if (_patientRepository.GetByEmail(patient.User.Email) != null)
             {
@@ -54,18 +54,23 @@ namespace Docway.Domain.CommandHandlers
         {
             this.Validation(message);
 
-            var patient = new Patient(message.Id, message.Name, message.Email, message.Cpf, message.Telefone, message.Password, message.UserName);
-            var existingPatient = _patientRepository.GetByEmail(patient.User.Email);
-
+            
+            var existingPatient = _patientRepository.GetByEmail(message.Email);
+            
             if (existingPatient != null)
             {
-                if (!existingPatient.Equals(patient))
+                if (existingPatient.Id == message.Id)
                 {
                     Bus.RaiseEvent(new DomainNotification(message.MessageType, "Email do paciente já foi utilizado."));
                     return;
                 }
             }
+            var patient = _patientRepository.GetByIdWithAggregate(message.Id);
 
+            patient.Update(message.Cpf, message.HealthProblems, message.Height, message.Weight, message.DateOfBirth, message.AllergiesAndReactions, message.Medicines, message.BloodType);
+            patient.User.Update(message.Name, message.Telefone);
+
+            
             _patientRepository.Update(patient);
 
             if (Commit()) Bus.RaiseEvent(new PatientUpdatedEvent(patient.Id, patient.User.Name, patient.User.Email, patient.Cpf, patient.User.PhoneNumber));
@@ -99,8 +104,8 @@ namespace Docway.Domain.CommandHandlers
             var parentPacient = _patientRepository.GetById(message.ParentId);
 
 
-            var patient = new Patient(Guid.NewGuid(), message.Name, message.Email, message.Cpf, message.Telefone, message.Password, message.UserName);
-            
+            var patient = new Patient(Guid.NewGuid(), message.Cpf, new UserBase(message.Name, message.Email, message.UserName, message.Telefone, message.Password)); 
+
 
             if (_patientRepository.GetByEmail(patient.User.Email) != null)
             {
