@@ -7,9 +7,12 @@ using System.Threading.Tasks;
 
 namespace Docway.Domain.Interfaces.Repository
 {
-    public interface IPatientRepository : IUserRepository<Patient>
+ 
+
+    public interface IUserRepository 
     {
-        Patient GetByEmail(string email);
-        Patient GetByIdWithAggregate(Guid id);
+        UserBase FindByEmailAsync(string email);
+        UserBase GetUserById(string Id);
+
     }
 }

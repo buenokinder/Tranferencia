@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 
 namespace Docway.Domain.Interfaces
 {
-	public interface IRepository<TEntity> : IDisposable where TEntity : class
+	public interface IUserRepository<TEntity> : IDisposable where TEntity : class
 	{
 		void Add(TEntity obj);
 		TEntity GetById(Guid id);

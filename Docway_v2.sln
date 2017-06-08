@@ -31,6 +31,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docway.Infra.CrossCutting.I
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.3 - Email", "4.3 - Email", "{C0A17919-6AC4-40E3-8D39-E5F1B7975502}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dockway.Presentation.Authentication", "Dockway.Presentation.Authentication\Dockway.Presentation.Authentication.csproj", "{FC1AD53D-8C39-4AB0-B002-1DFB6A8597AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docway.Application.Authentication", "Docway.Application.Authentication\Docway.Application.Authentication.csproj", "{2CA095DD-1902-4767-87A1-356648750C83}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +65,14 @@ Global
 		{F4B96FEA-FEE3-4054-8FFB-A01A67D45A54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4B96FEA-FEE3-4054-8FFB-A01A67D45A54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4B96FEA-FEE3-4054-8FFB-A01A67D45A54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC1AD53D-8C39-4AB0-B002-1DFB6A8597AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC1AD53D-8C39-4AB0-B002-1DFB6A8597AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC1AD53D-8C39-4AB0-B002-1DFB6A8597AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC1AD53D-8C39-4AB0-B002-1DFB6A8597AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CA095DD-1902-4767-87A1-356648750C83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CA095DD-1902-4767-87A1-356648750C83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CA095DD-1902-4767-87A1-356648750C83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CA095DD-1902-4767-87A1-356648750C83}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,5 +91,7 @@ Global
 		{DA583D94-FB70-4A41-ACD5-02B5287A3371} = {D4E20C7A-924E-48D3-9BAE-CFD3BCB8E5B3}
 		{F4B96FEA-FEE3-4054-8FFB-A01A67D45A54} = {DA583D94-FB70-4A41-ACD5-02B5287A3371}
 		{C0A17919-6AC4-40E3-8D39-E5F1B7975502} = {D4E20C7A-924E-48D3-9BAE-CFD3BCB8E5B3}
+		{FC1AD53D-8C39-4AB0-B002-1DFB6A8597AE} = {4855CE9E-01EF-4DE2-A6BE-87D99DF7BE28}
+		{2CA095DD-1902-4767-87A1-356648750C83} = {BBB774F5-AF33-4A6D-9233-3FEFC89D71BE}
 	EndGlobalSection
 EndGlobal

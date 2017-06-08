@@ -23,7 +23,7 @@ namespace Docway.Infra.Data.Repository
 
         public IEnumerable<Doctor> Find(DbGeography Location, DayOfWeek? dayOfWeek, int? Hour, DateTime? Date, int? specialtyId = default(int?), bool isSUSEnabled = false)
         {
-            return _context.Doctors.Where(x => x.Address.Location.Distance(Location) > x.AppointmentRadius)
+            return _context.Doctors.Where(x => x.Address.Location.Distance(Location) < x.AppointmentRadius)
                                     .Where(d => d.Calendars.Any(s => s.Hour == Hour.Value && s.Date == Date.Value && s.DayOfWeek == dayOfWeek))
                                     .Where(d => d.Specialties.Any(s => s.Id == specialtyId.Value));
         }
