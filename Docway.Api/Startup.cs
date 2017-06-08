@@ -12,13 +12,16 @@ using Microsoft.AspNetCore.Http;
 using AutoMapper;
 using Docway.Domain.Models;
 using Docway.Infra.Data.Context;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Docway.Api
 {
     public class Startup
     {
+        private readonly IHostingEnvironment _env;
         public Startup(IHostingEnvironment env)
         {
+            this._env = env;
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
@@ -32,13 +35,15 @@ namespace Docway.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddDbContext<ApplicationDbContext>(options =>
-              //  options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            
 
-            //  services.AddDbContext<ApplicationDbContext>(options =>
-            //options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            // Add framework services.
             services.AddMvc();
+
+            if (!_env.IsDevelopment())
+                services.Configure<MvcOptions>(o => o.Filters.Add(new RequireHttpsAttribute()));
+
+            
+
             services.AddAutoMapper();
 
             RegisterServices(services);
@@ -50,7 +55,8 @@ namespace Docway.Api
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-
+            app.UseHsts(h => h.MaxAge(days: 365).Preload());
+            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

@@ -10,6 +10,7 @@ using Dockway.Application.ViewModels;
 
 namespace Docway.Api.Controllers.V1
 {
+    [RequireHttps]
     [Route("api/doctors/")]
     public class DoctorController : BaseController
     {
