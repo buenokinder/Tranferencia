@@ -39,7 +39,8 @@ namespace Docway.Application.Authentication.Services
 
         public bool ValidatePassword(string email, string password)
         {
-            return true;
+           return _userRepository.ValidatePassword(email, password);
+            
         }
     }
 }

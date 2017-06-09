@@ -23,7 +23,7 @@ namespace Dockway.Presentation.Authentication
         {
             return new List<ApiResource>
             {
-                new ApiResource("api1", "My API")
+                new ApiResource("PatientApi", "PatientApi")
             };
         }
 
@@ -35,34 +35,32 @@ namespace Dockway.Presentation.Authentication
             {
                 new Client
                 {
-                    ClientId = "client",
-                    AllowedGrantTypes = GrantTypes.ClientCredentials,
+                    ClientId = "PatientApp",
 
                     ClientSecrets =
                     {
                         new Secret("secret".Sha256())
                     },
-                    AllowedScopes = { "api1" }
+                    AllowedScopes = { "PatientApi" }
                 },
 
                 // resource owner password grant client
                 new Client
                 {
-                    ClientId = "ro.client",
-                    AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
+                    ClientId = "SasApp",
 
                     ClientSecrets =
                     {
-                        new Secret("secret".Sha256())
+                        new Secret("1BA741F0-97AF-4FF3-B0B5-BE2E5E002161".Sha256())
                     },
-                    AllowedScopes = { "api1" }
+                    AllowedScopes = { "PatientApi" }
                 },
 
-                // OpenID Connect hybrid flow and client credentials client (MVC)
+             
                 new Client
                 {
-                    ClientId = "mvc",
-                    ClientName = "MVC Client",
+                    ClientId = "DoctorApp",
+                    ClientName = "Doctor Client",
                     AllowedGrantTypes = GrantTypes.HybridAndClientCredentials,
 
                     RequireConsent = true,
@@ -76,7 +74,7 @@ namespace Dockway.Presentation.Authentication
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
-                        "api1"
+                        "PatientApi"
                     },
                     AllowOfflineAccess = true
                 }

@@ -27,5 +27,10 @@
     <ProjectReference Include="..\Docway.Domain\Docway.Domain.csproj" />
     <ProjectReference Include="..\Docway.Infra.Data\Docway.Infra.Data.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Update="idsrv3test.pfx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 
 </Project>

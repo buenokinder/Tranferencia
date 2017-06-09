@@ -13,6 +13,7 @@ namespace Docway.Domain.Interfaces.Repository
     {
         UserBase FindByEmailAsync(string email);
         UserBase GetUserById(string Id);
+        bool ValidatePassword(string email, string password);
 
     }
 }

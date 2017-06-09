@@ -63,10 +63,10 @@ namespace Docway.Api
             {
                 Authority = "http://localhost:5000",
                 RequireHttpsMetadata = false,
-                ApiName = "UserMicroservice"
+                ApiName = "PatientApi"
             });
 
-            app.UseHsts(h => h.MaxAge(days: 365).Preload());
+           // app.UseHsts(h => h.MaxAge(days: 20).Preload());
 
             if (env.IsDevelopment())
             {

@@ -21,9 +21,18 @@ namespace Docway.Infra.Data.Repository
 
         public UserBase FindByEmailAsync(string email)
         {
-            return this._context.Users.Where(x => x.Email.Equals(email)).SingleOrDefault();
+            return this._context.Users.Where(x => x.Email.Equals(email) ).SingleOrDefault();
         }
 
+        public bool ValidatePassword(string email, string password)
+        {
+            var retorno = this._context.Users.Where(x => x.Email.Equals(email) && x.PasswordHash == password).ToList();
+            if (retorno.Count > 0)
+                return true;
+
+            return false;
+        }
+        
         public UserBase GetUserById(string Id)
         {
             return this._context.Users.Where(x => x.Id.Equals(Id)).SingleOrDefault();

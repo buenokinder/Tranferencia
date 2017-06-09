@@ -53,16 +53,12 @@ namespace Dockway.Presentation.Authentication
               .AddInMemoryApiResources(Config.GetApiResources())
               .AddInMemoryClients(Config.GetClients());
 
-
             services
                 .AddTransient<IResourceOwnerPasswordValidator, DocwayPasswordValidator>()
                 .AddTransient<IUserAppService, UserAppService>()
                 .AddTransient<IUserRepository, UserRepository>()
                 .AddScoped<DocwayContext>(repoFactory)
                 .AddTransient<IProfileService, ProfileService>();
-
-
-
         }
 
 

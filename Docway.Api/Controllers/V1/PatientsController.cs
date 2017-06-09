@@ -11,6 +11,7 @@ using Docway.Domain.Models;
 
 namespace Docway.Api.Controllers
 {
+    [Authorize]
     [Route("api/patients/")]
     public class PatientsController : BaseController
     {
@@ -53,7 +54,7 @@ namespace Docway.Api.Controllers
 
 
         [HttpGet]
-        [AllowAnonymous]
+ 
         [Route("{id:guid}")]
         public IActionResult Get(Guid? id)
         {
