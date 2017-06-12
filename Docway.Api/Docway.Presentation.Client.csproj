@@ -44,7 +44,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Dockway.Application\Dockway.Application.csproj" />
+    <ProjectReference Include="..\Dockway.Application\Docway.Application.Client.csproj" />
     <ProjectReference Include="..\Docway.Domain.Core\Docway.Domain.Core.csproj" />
     <ProjectReference Include="..\Docway.Domain\Docway.Domain.csproj" />
     <ProjectReference Include="..\Docway.Infra.CrossCutting.Identity\Docway.Infra.CrossCutting.Identity.csproj" />

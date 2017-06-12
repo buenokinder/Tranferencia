@@ -3,6 +3,8 @@ using IdentityModel;
 using IdentityServer4.Extensions;
 using IdentityServer4.Models;
 using IdentityServer4.Services;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Http.Authentication;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,7 +34,15 @@ namespace Dockway.Presentation.Authentication.Core
                 new Claim(JwtClaimTypes.Subject, user.Id.ToString()),
                 new Claim(JwtClaimTypes.Role, user.Roles.ToString()),
 
+
             };
+                var properties = new Dictionary<string, string>
+            {
+                { "userId", user.Id }, { "type", "patient" }
+            };
+
+                //var ticket = new AuthenticationTicket(claims, new AuthenticationProperties(properties));
+                //context.Validated(ticket);
 
                 context.IssuedClaims = claims;
                 return Task.FromResult(0);

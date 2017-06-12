@@ -13,15 +13,12 @@ using AutoMapper;
 using Docway.Domain.Models;
 using Docway.Infra.Data.Context;
 using Microsoft.AspNetCore.Mvc;
-using Owin;
-using Microsoft.Owin;
+
 using Microsoft.AspNet.Identity.EntityFramework;
+using Docway.Presentation.Appointment.Kernel;
 
-
-
-namespace Docway.Api
+namespace Docway.Presentation.Appointment
 {
-
     public class Startup
     {
         private readonly IHostingEnvironment _env;
@@ -38,7 +35,7 @@ namespace Docway.Api
 
         public IConfigurationRoot Configuration { get; }
 
-       
+
         public void ConfigureServices(IServiceCollection services)
         {
 
@@ -47,13 +44,13 @@ namespace Docway.Api
             if (!_env.IsDevelopment())
                 services.Configure<MvcOptions>(o => o.Filters.Add(new RequireHttpsAttribute()));
 
-            
+
             services.AddAutoMapper();
 
             RegisterServices(services);
         }
 
-      
+
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, IHttpContextAccessor accessor)
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
@@ -61,12 +58,12 @@ namespace Docway.Api
 
             app.UseIdentityServerAuthentication(new IdentityServerAuthenticationOptions
             {
-                Authority = "http://192.168.0.191:5000",
+                Authority = "http://localhost:5000",
                 RequireHttpsMetadata = false,
-                ApiName = "api1"
+                ApiName = "PatientApi"
             });
 
-           // app.UseHsts(h => h.MaxAge(days: 20).Preload());
+            // app.UseHsts(h => h.MaxAge(days: 20).Preload());
 
             if (env.IsDevelopment())
             {
@@ -83,13 +80,12 @@ namespace Docway.Api
             InMemoryBus.ContainerAccessor = () => accessor.HttpContext.RequestServices;
         }
 
-        
+
 
         private static void RegisterServices(IServiceCollection services)
         {
             DocwayInjectorBootStrapper.RegisterServices(services);
         }
 
-       
     }
 }

@@ -23,7 +23,8 @@ namespace Dockway.Presentation.Authentication
         {
             return new List<ApiResource>
             {
-                new ApiResource("PatientApi", "PatientApi")
+                new ApiResource("api1", "My API"),
+                new ApiResource("PatientApi", "My API")
             };
         }
 
@@ -35,7 +36,8 @@ namespace Dockway.Presentation.Authentication
             {
                 new Client
                 {
-                    ClientId = "PatientApp",
+                    ClientId = "sasapp",
+                    AllowedGrantTypes = GrantTypes.ClientCredentials,
 
                     ClientSecrets =
                     {
@@ -47,20 +49,21 @@ namespace Dockway.Presentation.Authentication
                 // resource owner password grant client
                 new Client
                 {
-                    ClientId = "SasApp",
+                    ClientId = "ro.client",
+                    AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
 
                     ClientSecrets =
                     {
-                        new Secret("1BA741F0-97AF-4FF3-B0B5-BE2E5E002161".Sha256())
+                        new Secret("secret".Sha256())
                     },
-                    AllowedScopes = { "PatientApi" }
+                    AllowedScopes = { "api1" }
                 },
 
-             
+                // OpenID Connect hybrid flow and client credentials client (MVC)
                 new Client
                 {
-                    ClientId = "DoctorApp",
-                    ClientName = "Doctor Client",
+                    ClientId = "mvc",
+                    ClientName = "MVC Client",
                     AllowedGrantTypes = GrantTypes.HybridAndClientCredentials,
 
                     RequireConsent = true,
@@ -74,7 +77,7 @@ namespace Dockway.Presentation.Authentication
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
-                        "PatientApi"
+                        "api1"
                     },
                     AllowOfflineAccess = true
                 }

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Docway.Api", "Docway.Api\Docway.Api.csproj", "{1CF435AD-0950-4B2A-B9DE-D5DCF7254EB9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Docway.Presentation.Client", "Docway.Api\Docway.Presentation.Client.csproj", "{1CF435AD-0950-4B2A-B9DE-D5DCF7254EB9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{329C44D8-4157-48D6-A309-FD228E32AE2E}"
 EndProject
@@ -23,7 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Pre
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{BBB774F5-AF33-4A6D-9233-3FEFC89D71BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dockway.Application", "Dockway.Application\Dockway.Application.csproj", "{C2EDE6B9-7414-459A-9B60-CE3B09F52F61}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docway.Application.Client", "Dockway.Application\Docway.Application.Client.csproj", "{C2EDE6B9-7414-459A-9B60-CE3B09F52F61}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2 - CrossCutting", "4.2 - CrossCutting", "{DA583D94-FB70-4A41-ACD5-02B5287A3371}"
 EndProject
@@ -31,9 +31,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docway.Infra.CrossCutting.I
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.3 - Email", "4.3 - Email", "{C0A17919-6AC4-40E3-8D39-E5F1B7975502}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dockway.Presentation.Authentication", "Dockway.Presentation.Authentication\Dockway.Presentation.Authentication.csproj", "{FC1AD53D-8C39-4AB0-B002-1DFB6A8597AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docway.Presentation.Authentication", "Dockway.Presentation.Authentication\Docway.Presentation.Authentication.csproj", "{FC1AD53D-8C39-4AB0-B002-1DFB6A8597AE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docway.Application.Authentication", "Docway.Application.Authentication\Docway.Application.Authentication.csproj", "{2CA095DD-1902-4767-87A1-356648750C83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docway.Presentation.Appointment", "Docway.Presentation.Appointment\Docway.Presentation.Appointment.csproj", "{95F082F3-9F4A-439D-802E-A5FE7A98F808}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docway.Presentation.Payment", "Docway.Presentation.Payment\Docway.Presentation.Payment.csproj", "{66ACEFBD-745B-4633-AF1A-954D612D42F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docway.Application.Appointment", "Docway.Application.Appointment\Docway.Application.Appointment.csproj", "{B0DB748E-9E75-4523-80C4-A3284432DED5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docway.Application.Payment", "Docway.Application.Payment\Docway.Application.Payment.csproj", "{E959351C-49FE-482D-9EFD-F7263ED7A2DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,6 +81,22 @@ Global
 		{2CA095DD-1902-4767-87A1-356648750C83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CA095DD-1902-4767-87A1-356648750C83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CA095DD-1902-4767-87A1-356648750C83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95F082F3-9F4A-439D-802E-A5FE7A98F808}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95F082F3-9F4A-439D-802E-A5FE7A98F808}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95F082F3-9F4A-439D-802E-A5FE7A98F808}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95F082F3-9F4A-439D-802E-A5FE7A98F808}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66ACEFBD-745B-4633-AF1A-954D612D42F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66ACEFBD-745B-4633-AF1A-954D612D42F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66ACEFBD-745B-4633-AF1A-954D612D42F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66ACEFBD-745B-4633-AF1A-954D612D42F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0DB748E-9E75-4523-80C4-A3284432DED5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0DB748E-9E75-4523-80C4-A3284432DED5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0DB748E-9E75-4523-80C4-A3284432DED5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0DB748E-9E75-4523-80C4-A3284432DED5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E959351C-49FE-482D-9EFD-F7263ED7A2DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E959351C-49FE-482D-9EFD-F7263ED7A2DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E959351C-49FE-482D-9EFD-F7263ED7A2DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E959351C-49FE-482D-9EFD-F7263ED7A2DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -93,5 +117,9 @@ Global
 		{C0A17919-6AC4-40E3-8D39-E5F1B7975502} = {D4E20C7A-924E-48D3-9BAE-CFD3BCB8E5B3}
 		{FC1AD53D-8C39-4AB0-B002-1DFB6A8597AE} = {4855CE9E-01EF-4DE2-A6BE-87D99DF7BE28}
 		{2CA095DD-1902-4767-87A1-356648750C83} = {BBB774F5-AF33-4A6D-9233-3FEFC89D71BE}
+		{95F082F3-9F4A-439D-802E-A5FE7A98F808} = {4855CE9E-01EF-4DE2-A6BE-87D99DF7BE28}
+		{66ACEFBD-745B-4633-AF1A-954D612D42F9} = {4855CE9E-01EF-4DE2-A6BE-87D99DF7BE28}
+		{B0DB748E-9E75-4523-80C4-A3284432DED5} = {BBB774F5-AF33-4A6D-9233-3FEFC89D71BE}
+		{E959351C-49FE-482D-9EFD-F7263ED7A2DE} = {BBB774F5-AF33-4A6D-9233-3FEFC89D71BE}
 	EndGlobalSection
 EndGlobal

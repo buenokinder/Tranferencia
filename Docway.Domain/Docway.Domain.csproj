@@ -63,6 +63,9 @@
     <Compile Include="CommandHandlers\CommandHandler.cs" />
     <Compile Include="CommandHandlers\DoctorCommandHandler.cs" />
     <Compile Include="CommandHandlers\PatientCommandHandler.cs" />
+    <Compile Include="Commands\Appointment\AppointmentCommand.cs" />
+    <Compile Include="Commands\Appointment\RegisterNewAppointmentCommand.cs" />
+    <Compile Include="Commands\Appointment\RemoveAppointmentCommand.cs" />
     <Compile Include="Commands\Doctor\DoctorCommand.cs" />
     <Compile Include="Commands\Doctor\RegisterNewDoctorCommand.cs" />
     <Compile Include="Commands\Doctor\RemoveDoctorCommand.cs" />
@@ -97,6 +100,7 @@
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Interfaces\IUser.cs" />
+    <Compile Include="Interfaces\Repository\IAppointmentRepository.cs" />
     <Compile Include="Interfaces\Repository\IDoctorRepository.cs" />
     <Compile Include="Interfaces\Repository\IPatientRepository.cs" />
     <Compile Include="Interfaces\Repository\IUserRepository.cs" />

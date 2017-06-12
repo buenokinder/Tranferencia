@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 
-namespace Docway.Api
+namespace Docway.Presentation.Appointment
 {
     public class Program
     {
@@ -14,13 +14,11 @@ namespace Docway.Api
         {
             var host = new WebHostBuilder()
                 .UseKestrel()
-                .UseUrls("http://192.168.0.191:8001")
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
                 .UseApplicationInsights()
                 .Build();
-
             host.Run();
         }
     }
