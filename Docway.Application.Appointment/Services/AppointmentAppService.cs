@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Docway.Application.Appointment.ViewModels;
 using Docway.Infra.Data.Repository.EventSourcing;
 using Docway.Domain.Core.Bus;
+using Docway.Domain.Commands.Doctor;
 
 namespace Docway.Application.Appointment.Services
 {
@@ -52,19 +53,21 @@ namespace Docway.Application.Appointment.Services
             return _mapper.Map<IEnumerable<AppointmentViewModel>>(_appointmentRepository.FindByPatientId(Id, dataInicial, dataFinal));   
         }
 
-        public void Register(AppointmentViewModel patientViewModel)
+        public void Register(AppointmentViewModel appointmentViewModel)
         {
-            throw new NotImplementedException();
+            Bus.SendCommand(_mapper.Map<RegisterNewAppointmentCommand>(appointmentViewModel));
         }
 
         public void Remove(Guid id)
         {
-            throw new NotImplementedException();
+            Bus.SendCommand(new RemoveAppointmentCommand(id));
         }
 
-        public void Update(AppointmentViewModel customerViewModel)
+        public void Update(AppointmentViewModel appointmentViewModel)
         {
-            throw new NotImplementedException();
+            //Bus.SendCommand(_mapper.Map<UpdateAppointmentCommand>(appointmentViewModel));
         }
+
+        
     }
 }

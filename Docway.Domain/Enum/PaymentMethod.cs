@@ -16,6 +16,8 @@ namespace Docway.Domain.Enum
         [Display(Name = "Dinheiro")]
         Money = 2,
         [Display(Name = "SUS")]
-        SUS = 3
+        SUS = 3,
+        [Display(Name = "Seguradora")]
+        Insurance = 4
     }
 }

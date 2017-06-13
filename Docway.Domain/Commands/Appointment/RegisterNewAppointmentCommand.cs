@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Docway.Domain.Commands.Doctor
 {
-    public class RegisterNewAppointmentCommand : DoctorCommand
+    public class RegisterNewAppointmentCommand : AppointmentCommand
     {
 
 
@@ -83,7 +83,7 @@ namespace Docway.Domain.Commands.Doctor
 
         public override bool IsValid()
         {
-            ValidationResult = new RegisterNewDoctorCommandValidation().Validate(this);
+            ValidationResult = new RegisterNewAppointmentCommandValidation().Validate(this);
             return ValidationResult.IsValid;
         }
     }

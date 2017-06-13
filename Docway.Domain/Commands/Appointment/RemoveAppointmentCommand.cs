@@ -9,7 +9,7 @@ namespace Docway.Domain.Commands.Doctor
 {
    
 
-    public class RemoveAppointmentCommand : DoctorCommand
+    public class RemoveAppointmentCommand : AppointmentCommand
     {
         public RemoveAppointmentCommand(Guid id)
         {

@@ -89,8 +89,10 @@
     <Compile Include="Repository\EventSourcing\EventStoreSQLRepository.cs" />
     <Compile Include="Repository\EventSourcing\IEventStoreRepository.cs" />
     <Compile Include="Repository\DoctorRepository .cs" />
+    <Compile Include="Repository\AddressRepository.cs" />
     <Compile Include="Repository\PatientRepository.cs" />
     <Compile Include="Repository\Repository.cs" />
+    <Compile Include="Repository\ServiceProviderRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="UoW\UnitOfWork.cs" />

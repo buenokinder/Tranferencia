@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommandHandlers\CommandHandler.cs" />
+    <Compile Include="CommandHandlers\AppointmentCommandHandler.cs" />
     <Compile Include="CommandHandlers\DoctorCommandHandler.cs" />
     <Compile Include="CommandHandlers\PatientCommandHandler.cs" />
     <Compile Include="Commands\Appointment\AppointmentCommand.cs" />
@@ -89,8 +90,12 @@
     <Compile Include="Enum\UserType.cs" />
     <Compile Include="Enum\ScheduleType.cs" />
     <Compile Include="Enum\WebhookAction.cs" />
+    <Compile Include="EventHandlers\AppointmentEventHandler.cs" />
     <Compile Include="EventHandlers\DoctorEventHandler.cs" />
     <Compile Include="EventHandlers\PatientEventHandler.cs" />
+    <Compile Include="Events\Appointment\AppointmentRegisteredEvent.cs" />
+    <Compile Include="Events\Appointment\AppointmentRemovedEvent.cs" />
+    <Compile Include="Events\Appointment\AppointmentUpdatedEvent.cs" />
     <Compile Include="Events\Doctor\DoctorRegisteredEvent.cs" />
     <Compile Include="Events\Doctor\DoctorRemovedEvent.cs" />
     <Compile Include="Events\Doctor\DoctorUpdatedEvent.cs" />
@@ -100,9 +105,11 @@
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Interfaces\IUser.cs" />
+    <Compile Include="Interfaces\Repository\IAddressRepository.cs" />
     <Compile Include="Interfaces\Repository\IAppointmentRepository.cs" />
     <Compile Include="Interfaces\Repository\IDoctorRepository.cs" />
     <Compile Include="Interfaces\Repository\IPatientRepository.cs" />
+    <Compile Include="Interfaces\Repository\IServiceProviderRepository.cs" />
     <Compile Include="Interfaces\Repository\IUserRepository.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Agenda.cs" />
@@ -139,6 +146,9 @@
     <Compile Include="Models\UserPasswordReset.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Validations\Appointment\AppointmentValidation.cs" />
+    <Compile Include="Validations\Appointment\RegisterNewAppointmentCommandValidation.cs" />
+    <Compile Include="Validations\Appointment\RemoveAppointmetCommandValidation.cs" />
     <Compile Include="Validations\Customs\CpfValidation.cs" />
     <Compile Include="Validations\Doctor\DoctorValidation.cs" />
     <Compile Include="Validations\Doctor\RegisterNewDoctorCommandValidation.cs" />
@@ -174,5 +184,6 @@
       <Name>Docway.Domain.Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

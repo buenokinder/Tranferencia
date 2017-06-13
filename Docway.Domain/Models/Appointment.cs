@@ -13,19 +13,43 @@ namespace Docway.Domain.Models
     {
         protected Appointment() { }
 
-        public Appointment(DateTime dateAppointment ,decimal price, AppointmentType type, Speciality speciality, Address address, List<Symptom> symptoms, List<Product> products, List<Transaction> transactions)
+        
+        public  Appointment(DateTime dateAppointment ,decimal price, Patient buyer, ServiceProvider seller  , AppointmentType type,  Address address)
         {
-            this.Symptoms = symptoms;
-            this.Products = products;
-            this.Transactions = transactions;
+            this.Buyer =  buyer;
+            this.Seller = seller;
             this.DateAppointment = dateAppointment;
             this.Price = price;
             this.Type = type;
-            this.Specialty = speciality;
             this.Address = address;
             this.CreateDate = DateTime.Now;
             this.IsUrgency = false;
         }
+
+        public  Appointment BuildMedicalAppointment(Speciality speciality, List<Symptom> symptoms, PaymentMethod paymentMethod) {
+            return this.SetSpecialty(speciality).SetSymptoms(symptoms).SetPaymentMethod(paymentMethod);
+        }
+
+
+        public Appointment SetSpecialty(Speciality speciality)
+        {
+            this.Specialty = speciality;
+            return this;
+        }
+
+        public Appointment SetSymptoms(List<Symptom> symptoms)
+        {
+            this.Symptoms = symptoms;
+            return this;
+        }
+
+
+        public Appointment SetProducts(List<Product> products)
+        {
+            this.Products = products;
+            return this;
+        }
+
 
         public Appointment SetPromotionalCode(string promotionalCode)
         {
@@ -93,9 +117,11 @@ namespace Docway.Domain.Models
 
         public Address Address { get; set; }
         [Index]
-        public UserBase Seller { get; set; }
+        public ServiceProvider Seller { get; set; }
+
+        
         [Index]
-        public UserBase Buyer { get; set; }
+        public Patient Buyer { get; set; }
         public MedicalRecord MedicalRecord { get; set; }
         public Speciality Specialty { get; set; }
 

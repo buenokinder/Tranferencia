@@ -66,6 +66,7 @@ namespace Docway.Api.Controllers
 
             return Ok(patientViewModel);
         }
+
         [HttpPost]
         [Route("{id:guid}/dependents")]
         public IActionResult PostDependent(Guid id, [FromBody]PatientViewModel patientViewModel)

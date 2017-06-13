@@ -22,7 +22,9 @@ namespace Docway.Infra.Data.Context
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
         public DbSet<Patient> Patients { get; set; }
-        
+        public DbSet<ServiceProvider> ServiceProviders { get; set; }
+        public DbSet<Clinic> Clinics { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -34,6 +36,8 @@ namespace Docway.Infra.Data.Context
             modelBuilder.Entity<Patient>().MapToStoredProcedures();
             modelBuilder.Entity<Doctor>().MapToStoredProcedures();
             modelBuilder.Entity<Colaborator>().MapToStoredProcedures();
+            modelBuilder.Entity<ServiceProvider>().MapToStoredProcedures();
+            
             modelBuilder.Entity<Appointment>().MapToStoredProcedures();
             modelBuilder.Entity<MedicalRecord>().MapToStoredProcedures();
             modelBuilder.Entity<Transaction>().MapToStoredProcedures();
