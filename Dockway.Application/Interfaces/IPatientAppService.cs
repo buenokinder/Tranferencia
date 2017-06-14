@@ -14,6 +14,7 @@ namespace Dockway.Application.Interfaces
         void Register(PatientViewModel patientViewModel);
         void AddDependent(PatientViewModel patientViewModel);
         IEnumerable<PatientViewModel> GetAll();
+        IEnumerable<PatientViewModel> GetByFilters(string cpf, string insuranceName, string insuranceNumber);
         PatientViewModel GetById(Guid id);
         void Update(PatientViewModel customerViewModel);
         void Remove(Guid id);

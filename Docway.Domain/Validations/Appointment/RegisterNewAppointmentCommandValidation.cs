@@ -13,9 +13,7 @@ namespace Docway.Domain.Validations.Doctor
     {
         public RegisterNewAppointmentCommandValidation()
         {
-            ValidateName();
-            ValidateEmail();
-            ValidateCpf();
+            
         }
     }
 }

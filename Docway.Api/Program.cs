@@ -14,7 +14,6 @@ namespace Docway.Api
         {
             var host = new WebHostBuilder()
                 .UseKestrel()
-                .UseUrls("http://192.168.0.191:8001")
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()

@@ -13,7 +13,7 @@ namespace Docway.Infra.Data
     {
         public DocwayContext Create()
         {
-            return new DocwayContext(@"Integrated Security=SSPI;Persist Security Info=False;User ID=SA;Initial Catalog=Docway;Data Source=localhost\SQLEXPRESS");
+            return new DocwayContext(@"Server=tcp:docwaymicroservices.database.windows.net,1433;Initial Catalog=docway_microservices;Persist Security Info=False;User ID=docwaymicroservices;Password=@G08uCaEdDocW@yDev;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
         }
     }
 }

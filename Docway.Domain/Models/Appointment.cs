@@ -116,10 +116,14 @@ namespace Docway.Domain.Models
         public AppointmentStatus Status { get; set; }
 
         public Address Address { get; set; }
+
+        public Guid SellerId { get; set; }
         [Index]
         public ServiceProvider Seller { get; set; }
 
-        
+
+        public Guid BuyerId { get; set; }
+
         [Index]
         public Patient Buyer { get; set; }
         public MedicalRecord MedicalRecord { get; set; }

@@ -75,5 +75,12 @@ namespace Dockway.Application.Services
         {
             Bus.SendCommand(_mapper.Map<AddDependentCommand>(patientViewModel));
         }
+
+     
+
+        public IEnumerable<PatientViewModel> GetByFilters(string cpf, string insuranceName, string insuranceNumber)
+        {
+            return _mapper.Map<IEnumerable<PatientViewModel>>(_patientRepository.GetByFilter(cpf, insuranceName, insuranceNumber));
+        }
     }
 }

@@ -14,7 +14,7 @@ namespace Docway.Domain.Validations.Doctor
     {
         public RemoveAppointmentCommandValidation()
         {
-            ValidateId();
+            
         }
     }
 }

@@ -10,75 +10,27 @@ namespace Docway.Domain.Commands.Doctor
 {
     public class RegisterNewAppointmentCommand : AppointmentCommand
     {
-
-
-
-        public RegisterNewAppointmentCommand(
-         string name ,
-
-         string email ,
-
-         string cpf ,
-
-         string telefone ,
-
-         string userName ,
-
-         string password ,
-
-         DateTime? dateOfBirth ,
-
-         decimal Weight ,
-
-         decimal Height ,
-
-         string HealthProblems ,
-
-         string AllergiesAndReactions ,
-
-         string Medicines ,
-
-         string BloodType ,
-
-         string Crm ,
-
-         string CrmUF ,
-
-         string Bio ,
-
-         Gender Gender ,
-
-         decimal AppointmentPrice ,
-
-         int AppointmentRadius ,
-
-         string Street ,
-
-         string Number ,
-
-         string Complement ,
-
-         string Neighborhood ,
-
-         string Cep ,
-
-         string City ,
-
-         string State ,
-
-         string Landmark ,
-
-         double? Latitude ,
-
-         double? Longitude )
+        public RegisterNewAppointmentCommand(string buyerId,
+         string sellerId ,
+         int addressId,
+         int? creditCardId,
+         AppointmentType type,
+         string promotionalCode,
+         decimal price ,
+         bool hasHealthInsurance ,
+         bool isUrgency,
+         DateTime dateAppointment )
         {
-            Id = Guid.NewGuid();
-            Name = name;
-            Email = email;
-            Cpf = cpf;
-            UserName = userName;
-            Telefone = telefone;
-            Password = password;
+            //this.Id = Guid.NewGuid();
+            this.SellerId = sellerId;
+            this.AddressId = addressId;
+            this.CreditCardId = creditCardId;
+            this.Type = type;
+            this.PromotionalCode = promotionalCode;
+            this.Price = price;
+            this.HasHealthInsurance = hasHealthInsurance;
+            this.IsUrgency = isUrgency;
+            this.DateAppointment = dateAppointment;
         }
 
         public override bool IsValid()

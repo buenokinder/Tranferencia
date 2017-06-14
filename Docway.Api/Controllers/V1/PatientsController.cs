@@ -67,6 +67,20 @@ namespace Docway.Api.Controllers
             return Ok(patientViewModel);
         }
 
+
+        [HttpGet]
+        public IActionResult GetFiltered(string cpf, string insuranceName, string insuranceNumber)
+        {
+           
+
+            var patientViewModel = _patientAppService.GetByFilters(cpf, insuranceName, insuranceNumber);
+
+            if (patientViewModel == null) return NotFound();
+
+            return Ok(patientViewModel);
+        }
+
+
         [HttpPost]
         [Route("{id:guid}/dependents")]
         public IActionResult PostDependent(Guid id, [FromBody]PatientViewModel patientViewModel)

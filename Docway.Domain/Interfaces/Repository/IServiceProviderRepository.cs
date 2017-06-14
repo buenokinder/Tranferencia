@@ -9,7 +9,7 @@ namespace Docway.Domain.Interfaces.Repository
 {
 
 
-    public interface IServiceProviderRepository : IUserRepository<ServiceProvider>
+    public interface IServiceProviderRepository : IRepository<ServiceProvider>
     {
         ServiceProvider GetByDoctorId(Guid id);
         ServiceProvider GetByClinicId(Guid id);

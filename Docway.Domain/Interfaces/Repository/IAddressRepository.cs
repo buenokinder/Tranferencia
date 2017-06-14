@@ -9,7 +9,7 @@ namespace Docway.Domain.Interfaces.Repository
 {
 
 
-    public interface IAddressRepository : IUserRepository<Address>
+    public interface IAddressRepository : IRepository<Address>
     {
         
     }

@@ -58,9 +58,9 @@ namespace Docway.Presentation.Appointment
 
             app.UseIdentityServerAuthentication(new IdentityServerAuthenticationOptions
             {
-                Authority = "http://localhost:5000",
+                Authority = "https://docwayauthdev.azurewebsites.net",
                 RequireHttpsMetadata = false,
-                ApiName = "PatientApi"
+                ApiName = "api1"
             });
 
             // app.UseHsts(h => h.MaxAge(days: 20).Preload());

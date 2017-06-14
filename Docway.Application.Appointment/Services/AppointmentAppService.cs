@@ -58,7 +58,7 @@ namespace Docway.Application.Appointment.Services
             Bus.SendCommand(_mapper.Map<RegisterNewAppointmentCommand>(appointmentViewModel));
         }
 
-        public void Remove(Guid id)
+        public void Remove(int id)
         {
             Bus.SendCommand(new RemoveAppointmentCommand(id));
         }

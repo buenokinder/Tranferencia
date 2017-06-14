@@ -11,11 +11,13 @@ namespace Docway.Domain.Commands.Doctor
    
     public abstract class AppointmentCommand : Command
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         public string BuyerId { get; set; }
      
         public string SellerId { get; set; }
+
+        public int AddressId { get; set; }
 
         public int? CreditCardId { get; set; }
 

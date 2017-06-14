@@ -16,6 +16,6 @@ namespace Docway.Application.Appointment.Interfaces
         IEnumerable<AppointmentViewModel> GetAll();
         AppointmentViewModel GetById(Guid id);
         void Update(AppointmentViewModel appointmentViewModel);
-        void Remove(Guid id);
+        void Remove(int id);
     }
 }

@@ -9,7 +9,7 @@ using System.Data.Entity;
 
 namespace Docway.Infra.Data.Repository
 {
-	public class Repository<TEntity> : IUserRepository<TEntity> where TEntity : class
+	public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
 	{
 		protected DocwayContext Db;
 		protected DbSet<TEntity> DbSet;
@@ -60,5 +60,10 @@ namespace Docway.Infra.Data.Repository
 			Db.Dispose();
 			GC.SuppressFinalize(this);
 		}
-	}
+
+        public TEntity GetById(int id)
+        {
+            return DbSet.Find(id);
+        }
+    }
 }

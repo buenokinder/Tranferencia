@@ -9,7 +9,6 @@ namespace Docway.Infra.Data.Migrations
     {
         public Configuration()
         {
-            SqlServerTypes.Utilities.LoadNativeAssemblies(AppDomain.CurrentDomain.BaseDirectory);
             AutomaticMigrationsEnabled = true;
         }
 

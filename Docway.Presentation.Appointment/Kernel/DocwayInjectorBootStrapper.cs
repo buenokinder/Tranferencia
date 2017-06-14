@@ -21,13 +21,13 @@ namespace Docway.Presentation.Appointment.Kernel
     {
         private static readonly Func<IServiceProvider, DocwayContext> repoFactory = (_) =>
         {
-            return new DocwayContext(@"Integrated Security=SSPI;Persist Security Info=False;User ID=SA;Initial Catalog=Docway;Data Source=localhost\SQLEXPRESS");
+            return new DocwayContext(@"Server=tcp:docwaymicroservices.database.windows.net,1433;Initial Catalog=docway_microservices;Persist Security Info=False;User ID=docwaymicroservices;Password=@G08uCaEdDocW@yDev;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
         };
 
 
         private static readonly Func<IServiceProvider, EventStoreSQLContext> repoFactoryEvent = (_) =>
         {
-            return new EventStoreSQLContext(@"Integrated Security=SSPI;Persist Security Info=False;User ID=SA;Initial Catalog=DocwayEvent;Data Source=localhost\SQLEXPRESS");
+            return new EventStoreSQLContext(@"Server=tcp:docwaymicroservices.database.windows.net,1433;Initial Catalog=docway_microservices;Persist Security Info=False;User ID=docwaymicroservices;Password=@G08uCaEdDocW@yDev;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
         };
 
         public static void RegisterServices(IServiceCollection services)

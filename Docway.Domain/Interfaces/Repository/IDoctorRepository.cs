@@ -10,7 +10,7 @@ namespace Docway.Domain.Interfaces.Repository
 {
     
 
-    public interface IDoctorRepository : IUserRepository<Doctor>
+    public interface IDoctorRepository : IRepository<Doctor>
     {
         Doctor GetByEmail(string email);
         Doctor GetByIdWithAggregate(Guid id);

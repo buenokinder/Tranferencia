@@ -4,11 +4,12 @@ using System.Linq.Expressions;
 
 namespace Docway.Domain.Interfaces
 {
-	public interface IUserRepository<TEntity> : IDisposable where TEntity : class
+	public interface IRepository<TEntity> : IDisposable where TEntity : class
 	{
 		void Add(TEntity obj);
 		TEntity GetById(Guid id);
-		IEnumerable<TEntity> GetAll();
+        TEntity GetById(int id);
+        IEnumerable<TEntity> GetAll();
 		void Update(TEntity obj);
 		void Remove(Guid id);
 		IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate);

@@ -56,17 +56,15 @@ namespace Docway.Domain.CommandHandlers
             this.Validation(message);
 
             var pacient = _patientRepository.GetById(new Guid(message.BuyerId));
-            var appointment = new Appointment(message.DateAppointment, message.Price, pacient, this.GetServiceProvider(message), message.Type, );
+            var address = _addressRepository.GetById(message.AddressId);
 
-            if (_appointmentRepository.GetByEmail(doctor.User.Email) != null)
-            {
-                Bus.RaiseEvent(new DomainNotification(message.MessageType, "Não é possível realizar o cadastro com o mesmo email de médico."));
-                return;
-            }
+            var appointment = new Appointment(message.DateAppointment, message.Price, pacient, this.GetServiceProvider(message), message.Type, address );
 
-            _appointmentRepository.Add(doctor);
 
-            if (Commit()) Bus.RaiseEvent(new DoctorRegisteredEvent(doctor.Id, doctor.User.Name, doctor.User.Email, doctor.Cpf, doctor.User.PhoneNumber));
+
+            _appointmentRepository.Add(appointment);
+
+            if (Commit()) Bus.RaiseEvent(new AppointmentRegisteredEvent(appointment.Id));
         }
     }
 }

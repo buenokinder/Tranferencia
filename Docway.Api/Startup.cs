@@ -61,7 +61,7 @@ namespace Docway.Api
 
             app.UseIdentityServerAuthentication(new IdentityServerAuthenticationOptions
             {
-                Authority = "http://192.168.0.191:5000",
+                Authority = "https://docwayauthdev.azurewebsites.net",
                 RequireHttpsMetadata = false,
                 ApiName = "api1"
             });

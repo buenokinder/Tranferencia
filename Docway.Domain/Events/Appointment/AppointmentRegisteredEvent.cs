@@ -11,22 +11,11 @@ namespace Docway.Domain.Events.Patient
 
     public class AppointmentRegisteredEvent : Event
     {
-        public AppointmentRegisteredEvent(Guid id, string name, string email, string cpf, string telefone)
+        public AppointmentRegisteredEvent(int id)
         {
             Id = id;
-            Name = name;
-            Email = email;
-            Cpf = cpf;
-            Telefone = telefone;
         }
-        public Guid Id { get; set; }
-
-        public string Name { get; private set; }
-
-        public string Email { get; private set; }
-
-        public string Cpf{ get; private set; }
-
-        public string Telefone { get; private set; }
+        public int Id { get; set; }
+        
     }
 }

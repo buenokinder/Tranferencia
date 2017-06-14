@@ -43,7 +43,7 @@ namespace Dockway.Presentation.Authentication
                     {
                         new Secret("secret".Sha256())
                     },
-                    AllowedScopes = { "PatientApi" }
+                    AllowedScopes = { "api1" }
                 },
 
                 // resource owner password grant client

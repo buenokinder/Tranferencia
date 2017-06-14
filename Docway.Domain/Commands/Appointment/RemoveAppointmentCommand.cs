@@ -11,15 +11,14 @@ namespace Docway.Domain.Commands.Doctor
 
     public class RemoveAppointmentCommand : AppointmentCommand
     {
-        public RemoveAppointmentCommand(Guid id)
+        public RemoveAppointmentCommand(int id)
         {
             Id = id;
-            AggregateId = id;
         }
 
         public override bool IsValid()
         {
-            ValidationResult = new RemoveDoctorCommandValidation().Validate(this);
+            ValidationResult = new RemoveAppointmentCommandValidation().Validate(this);
             return ValidationResult.IsValid;
         }
     }
